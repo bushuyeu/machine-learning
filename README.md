@@ -1,5 +1,7 @@
 # Machine Learning
 
+by Narayana Santhanam, Spring 2026
+
 - **Linear regression** (ridge, LASSO), neural network basics (CNNs, autoencoders), SGD, Fisher discriminant, PCA, SVD, evaluation metrics (ROC, precision/recall)
 - **Kernel methods** — SVMs, kernel PCA, Gaussian processes, random Fourier features
 - **High-dimensional Gaussians** — Johnson-Lindenstrauss lemma, L1/L2 regularization
