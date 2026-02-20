@@ -1,0 +1,34 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.pytest_cache/
+
+# uv
+.venv/
+.uv/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# ML artifacts
+*.pt
+*.pth
+*.ckpt
+*.onnx
+runs/
+outputs/
+checkpoints/
+
+# Data (commit only small samples; large datasets go here)
+data/
+*.csv
+*.parquet
+*.hdf5
+*.h5
+
+# Env
+.env
+
+# macOS
+.DS_Store
