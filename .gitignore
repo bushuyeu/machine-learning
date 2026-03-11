@@ -23,12 +23,16 @@ checkpoints/
 # Data (commit only small samples; large datasets go here)
 data/
 *.csv
+!class_materials/notebooks/*.csv
 *.parquet
 *.hdf5
 *.h5
 
 # Env
 .env
+
+# Recordings (too large for GitHub)
+class_materials/recordings/
 
 # macOS
 .DS_Store
