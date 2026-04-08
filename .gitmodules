@@ -1,0 +1,3 @@
+[submodule "assigments/ml-kernel-methods"]
+	path = assigments/ml-kernel-methods
+	url = https://github.com/bushuyeu/ml-kernel-methods.git
