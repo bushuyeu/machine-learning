@@ -36,3 +36,6 @@ class_materials/recordings/
 
 # macOS
 .DS_Store
+
+# Claude Code
+.claude/
