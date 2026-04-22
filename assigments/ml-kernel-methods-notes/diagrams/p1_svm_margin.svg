@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 450" font-family="ui-serif, Georgia, serif">
+  <defs>
+    <marker id="arr_dbl" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="10" markerHeight="10" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#2C3E50"/>
+    </marker>
+    <marker id="arr_dbl_end" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="10" markerHeight="10" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#2C3E50"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="700" height="450" fill="#FDFEFE"/>
+
+  <!-- Shaded margin strip -->
+  <polygon points="134.2,257.9 534.2,107.9 565.8,192.1 165.8,342.1"
+           fill="#ECF0F1" opacity="0.85" stroke="none"/>
+
+  <!-- Upper margin boundary (positive side) -->
+  <line x1="134.2" y1="257.9" x2="534.2" y2="107.9" stroke="#27AE60" stroke-width="2" stroke-dasharray="7,5"/>
+  <text x="542" y="105" font-size="14" fill="#27AE60" font-style="italic">wᵀx − b = +1</text>
+
+  <!-- Central decision hyperplane -->
+  <line x1="150" y1="300" x2="550" y2="150" stroke="#2C3E50" stroke-width="3"/>
+  <text x="558" y="148" font-size="14" fill="#2C3E50" font-style="italic">wᵀx − b = 0</text>
+  <text x="558" y="165" font-size="11" fill="#7F8C8D" font-style="italic">(decision boundary)</text>
+
+  <!-- Lower margin boundary (negative side) -->
+  <line x1="165.8" y1="342.1" x2="565.8" y2="192.1" stroke="#C0392B" stroke-width="2" stroke-dasharray="7,5"/>
+  <text x="572" y="190" font-size="14" fill="#C0392B" font-style="italic">wᵀx − b = −1</text>
+
+  <!-- Support vectors on upper margin (positive class) -->
+  <circle cx="228" cy="223" r="8" fill="#D5F5E3" stroke="#27AE60" stroke-width="3"/>
+  <circle cx="321" cy="188" r="8" fill="#D5F5E3" stroke="#27AE60" stroke-width="3"/>
+  <circle cx="415" cy="153" r="8" fill="#D5F5E3" stroke="#27AE60" stroke-width="3"/>
+
+  <!-- Support vectors on lower margin (negative class) -->
+  <circle cx="306" cy="290" r="8" fill="#FADBD8" stroke="#C0392B" stroke-width="3"/>
+  <circle cx="400" cy="254" r="8" fill="#FADBD8" stroke="#C0392B" stroke-width="3"/>
+
+  <!-- A couple of non-support-vector training points (just for context) -->
+  <circle cx="215" cy="140" r="5" fill="#27AE60" opacity="0.55"/>
+  <circle cx="445" cy="75" r="5" fill="#27AE60" opacity="0.55"/>
+  <circle cx="180" cy="410" r="5" fill="#C0392B" opacity="0.55"/>
+  <circle cx="510" cy="295" r="5" fill="#C0392B" opacity="0.55"/>
+
+  <!-- Double-arrow across the full margin width -->
+  <line x1="334.2" y1="182.9" x2="365.8" y2="267.1"
+        stroke="#2C3E50" stroke-width="1.8"
+        marker-start="url(#arr_dbl)" marker-end="url(#arr_dbl)"/>
+  <text x="380" y="230" font-size="16" fill="#2C3E50" font-style="italic" font-weight="bold">2/‖w‖</text>
+  <text x="380" y="250" font-size="12" fill="#7F8C8D">(total margin)</text>
+
+  <!-- Legend -->
+  <g font-size="12">
+    <rect x="40" y="395" width="16" height="16" fill="#D5F5E3" stroke="#27AE60" stroke-width="2"/>
+    <text x="62" y="408" fill="#27AE60">support vector, positive class  (y = +1)</text>
+    <rect x="40" y="418" width="16" height="16" fill="#FADBD8" stroke="#C0392B" stroke-width="2"/>
+    <text x="62" y="431" fill="#C0392B">support vector, negative class  (y = −1)</text>
+  </g>
+</svg>

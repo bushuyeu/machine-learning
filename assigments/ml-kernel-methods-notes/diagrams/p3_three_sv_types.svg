@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 460" font-family="ui-serif, Georgia, serif">
+  <rect width="800" height="460" fill="#FDFEFE"/>
+
+  <!-- Title -->
+  <text x="400" y="28" font-size="17" font-weight="bold" fill="#2C3E50" text-anchor="middle">The three KKT categories of training points in a soft-margin SVC</text>
+
+  <!-- Shaded margin strip -->
+  <polygon points="80,330 640,130 680,238 120,438" fill="#ECF0F1" opacity="0.85"/>
+
+  <!-- Upper margin (positive class side) -->
+  <line x1="80" y1="330" x2="640" y2="130" stroke="#27AE60" stroke-width="2" stroke-dasharray="6,4"/>
+  <text x="648" y="130" font-size="12" fill="#27AE60" font-style="italic">wᵀx − b = +1</text>
+
+  <!-- Decision boundary -->
+  <line x1="100" y1="384" x2="660" y2="184" stroke="#2C3E50" stroke-width="3"/>
+  <text x="666" y="184" font-size="12" fill="#2C3E50" font-style="italic">wᵀx − b = 0</text>
+
+  <!-- Lower margin (negative class side) -->
+  <line x1="120" y1="438" x2="680" y2="238" stroke="#C0392B" stroke-width="2" stroke-dasharray="6,4"/>
+  <text x="688" y="238" font-size="12" fill="#C0392B" font-style="italic">wᵀx − b = −1</text>
+
+  <!-- =============== NON-SUPPORT-VECTORS (α = 0) =============== -->
+  <!-- Well inside their class region -->
+  <circle cx="150" cy="120" r="6" fill="#27AE60" opacity="0.5"/>
+  <circle cx="280" cy="70"  r="6" fill="#27AE60" opacity="0.5"/>
+  <circle cx="430" cy="55"  r="6" fill="#27AE60" opacity="0.5"/>
+
+  <circle cx="180" cy="430" r="6" fill="#C0392B" opacity="0.5"/>
+  <circle cx="330" cy="440" r="6" fill="#C0392B" opacity="0.5"/>
+  <circle cx="510" cy="380" r="6" fill="#C0392B" opacity="0.5"/>
+  <circle cx="620" cy="360" r="6" fill="#C0392B" opacity="0.5"/>
+
+  <!-- =============== MARGIN SUPPORT VECTORS (0 < α < C) =============== -->
+  <!-- Sitting exactly on the margin lines -->
+  <circle cx="220" cy="280" r="10" fill="#D5F5E3" stroke="#27AE60" stroke-width="3.5"/>
+  <circle cx="360" cy="210" r="10" fill="#D5F5E3" stroke="#27AE60" stroke-width="3.5"/>
+  <circle cx="510" cy="145" r="10" fill="#D5F5E3" stroke="#27AE60" stroke-width="3.5"/>
+
+  <circle cx="250" cy="390" r="10" fill="#FADBD8" stroke="#C0392B" stroke-width="3.5"/>
+  <circle cx="440" cy="320" r="10" fill="#FADBD8" stroke="#C0392B" stroke-width="3.5"/>
+
+  <!-- =============== BOUND SUPPORT VECTORS (α = C) =============== -->
+  <!-- Inside the margin or on the wrong side. Filled squares for visibility. -->
+  <rect x="322" y="258" width="16" height="16" fill="#F39C12" stroke="#B9770E" stroke-width="2.5"/>
+  <rect x="420" y="200" width="16" height="16" fill="#F39C12" stroke="#B9770E" stroke-width="2.5"/>
+
+  <!-- A bound SV on the wrong side (misclassified) -->
+  <rect x="200" y="360" width="16" height="16" fill="#F39C12" stroke="#B9770E" stroke-width="2.5"/>
+  <text x="218" y="374" font-size="10" fill="#B9770E">(pos on neg side)</text>
+
+  <!-- Annotations with lines pointing to examples -->
+  <!-- Non-SV callout -->
+  <g>
+    <line x1="360" y1="70" x2="460" y2="40" stroke="#7F8C8D" stroke-width="0.8"/>
+    <text x="463" y="35" font-size="11" fill="#7F8C8D">non-SV</text>
+    <text x="463" y="49" font-size="10" fill="#7F8C8D">αᵢ = 0  (not an SV)</text>
+  </g>
+
+  <!-- Margin SV callout -->
+  <g>
+    <line x1="510" y1="145" x2="600" y2="90" stroke="#27AE60" stroke-width="0.8"/>
+    <text x="603" y="85" font-size="11" fill="#27AE60" font-weight="bold">margin SV</text>
+    <text x="603" y="99" font-size="10" fill="#27AE60">0 &lt; αᵢ &lt; C</text>
+  </g>
+
+  <!-- Bound SV callout -->
+  <g>
+    <line x1="438" y1="208" x2="540" y2="280" stroke="#F39C12" stroke-width="0.8"/>
+    <text x="543" y="284" font-size="11" fill="#B9770E" font-weight="bold">bound SV</text>
+    <text x="543" y="298" font-size="10" fill="#B9770E">αᵢ = C (inside margin)</text>
+  </g>
+
+  <!-- Legend -->
+  <g font-size="11">
+    <circle cx="36" cy="430" r="6" fill="#27AE60" opacity="0.5"/>
+    <text x="48" y="434" fill="#7F8C8D">non-SV: αᵢ = 0</text>
+    <circle cx="210" cy="430" r="8" fill="#D5F5E3" stroke="#27AE60" stroke-width="2.5"/>
+    <text x="224" y="434" fill="#27AE60">margin SV: 0 &lt; αᵢ &lt; C</text>
+    <rect x="430" y="423" width="14" height="14" fill="#F39C12" stroke="#B9770E" stroke-width="2"/>
+    <text x="448" y="434" fill="#B9770E">bound SV: αᵢ = C (inside margin / misclassified)</text>
+  </g>
+</svg>

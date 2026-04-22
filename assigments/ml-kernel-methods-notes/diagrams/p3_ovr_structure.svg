@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 420" font-family="ui-serif, Georgia, serif">
+  <rect width="900" height="420" fill="#FDFEFE"/>
+
+  <text x="450" y="28" font-size="17" font-weight="bold" fill="#2C3E50" text-anchor="middle">One-vs-Rest: turning 20-class classification into 20 binary SVMs</text>
+  <text x="450" y="48" font-size="12" fill="#7F8C8D" text-anchor="middle">Train k binary classifiers, each answering "is this class k, or any other class?"</text>
+
+  <!-- Input training data (left) -->
+  <g transform="translate(30 80)">
+    <rect x="0" y="0" width="180" height="260" fill="#F8F9F9" stroke="#2C3E50" stroke-width="1.5" rx="6"/>
+    <text x="90" y="22" font-size="13" font-weight="bold" fill="#2C3E50" text-anchor="middle">Training data</text>
+    <text x="90" y="40" font-size="11" fill="#7F8C8D" text-anchor="middle">11 314 documents,  20 classes</text>
+
+    <!-- class labels -->
+    <g font-size="10" fill="#2C3E50">
+      <text x="16" y="72">alt.atheism</text>
+      <text x="16" y="90">comp.graphics</text>
+      <text x="16" y="108">comp.os.ms-windows</text>
+      <text x="16" y="126">comp.sys.ibm</text>
+      <text x="16" y="144">comp.sys.mac</text>
+      <text x="16" y="162">comp.windows.x</text>
+      <text x="16" y="180">misc.forsale</text>
+      <text x="16" y="198">rec.autos</text>
+      <text x="16" y="216">rec.motorcycles</text>
+      <text x="16" y="234">… (20 total)</text>
+    </g>
+  </g>
+
+  <!-- Arrow to the decomposition -->
+  <path d="M 220 210 L 280 210" stroke="#2C3E50" stroke-width="2" marker-end="url(#arr3)"/>
+  <defs>
+    <marker id="arr3" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#2C3E50"/>
+    </marker>
+  </defs>
+  <text x="250" y="200" font-size="11" fill="#7F8C8D" text-anchor="middle">OneVsRest</text>
+  <text x="250" y="228" font-size="10" fill="#7F8C8D" text-anchor="middle">wrapper</text>
+
+  <!-- 4 binary classifier boxes + ellipsis -->
+  <g transform="translate(295 80)">
+    <!-- Classifier 0 -->
+    <rect x="0" y="0" width="280" height="46" fill="#D5F5E3" stroke="#27AE60" stroke-width="2" rx="4"/>
+    <text x="14" y="22" font-size="12" font-weight="bold" fill="#27AE60">Classifier 0:  alt.atheism  vs  rest</text>
+    <text x="14" y="38" font-size="10" fill="#7F8C8D">positive = class 0,  negative = classes 1-19</text>
+
+    <!-- Classifier 1 -->
+    <rect x="0" y="56" width="280" height="46" fill="#D5F5E3" stroke="#27AE60" stroke-width="2" rx="4"/>
+    <text x="14" y="78" font-size="12" font-weight="bold" fill="#27AE60">Classifier 1:  comp.graphics  vs  rest</text>
+    <text x="14" y="94" font-size="10" fill="#7F8C8D">positive = class 1,  negative = classes 0, 2-19</text>
+
+    <!-- Classifier 2 -->
+    <rect x="0" y="112" width="280" height="46" fill="#D5F5E3" stroke="#27AE60" stroke-width="2" rx="4"/>
+    <text x="14" y="134" font-size="12" font-weight="bold" fill="#27AE60">Classifier 2:  comp.os.ms-windows  vs  rest</text>
+    <text x="14" y="150" font-size="10" fill="#7F8C8D">positive = class 2,  negative = classes 0-1, 3-19</text>
+
+    <!-- Ellipsis -->
+    <text x="140" y="190" font-size="22" fill="#2C3E50" text-anchor="middle">⋮</text>
+
+    <!-- Classifier 19 -->
+    <rect x="0" y="210" width="280" height="46" fill="#D5F5E3" stroke="#27AE60" stroke-width="2" rx="4"/>
+    <text x="14" y="232" font-size="12" font-weight="bold" fill="#27AE60">Classifier 19:  talk.religion.misc  vs  rest</text>
+    <text x="14" y="248" font-size="10" fill="#7F8C8D">positive = class 19,  negative = classes 0-18</text>
+  </g>
+
+  <!-- Arrow from binaries to prediction -->
+  <path d="M 585 210 L 645 210" stroke="#2C3E50" stroke-width="2" marker-end="url(#arr3)"/>
+  <text x="615" y="200" font-size="11" fill="#7F8C8D" text-anchor="middle">argmax</text>
+  <text x="615" y="228" font-size="10" fill="#7F8C8D" text-anchor="middle">over scores</text>
+
+  <!-- Prediction box -->
+  <g transform="translate(660 110)">
+    <rect x="0" y="0" width="220" height="200" fill="#FEF9E7" stroke="#F39C12" stroke-width="1.5" rx="6"/>
+    <text x="110" y="22" font-size="13" font-weight="bold" fill="#B9770E" text-anchor="middle">Prediction</text>
+    <text x="110" y="40" font-size="10" fill="#7F8C8D" text-anchor="middle">pick class with highest score</text>
+
+    <g font-size="10" fill="#7F8C8D">
+      <text x="16" y="72">score₀ = w₀ᵀ φ(x) − b₀</text>
+      <text x="16" y="92">score₁ = w₁ᵀ φ(x) − b₁</text>
+      <text x="16" y="112">score₂ = w₂ᵀ φ(x) − b₂</text>
+      <text x="16" y="132">⋮</text>
+      <text x="16" y="152">score₁₉ = w₁₉ᵀ φ(x) − b₁₉</text>
+    </g>
+    <text x="110" y="182" font-size="13" font-weight="bold" fill="#F39C12" text-anchor="middle">ŷ = argmaxₖ scoreₖ</text>
+  </g>
+
+  <!-- Footnote -->
+  <text x="450" y="390" font-size="11" fill="#7F8C8D" text-anchor="middle" font-style="italic">The same One-vs-Rest decomposition is used independently for each kernel (linear, RBF, Matérn),</text>
+  <text x="450" y="406" font-size="11" fill="#7F8C8D" text-anchor="middle" font-style="italic">giving 3 × 20 = 60 binary classifiers total. The Matérn kernel uses "precomputed" mode, not SVC's built-in shortcut.</text>
+</svg>

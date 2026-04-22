@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 450" font-family="ui-serif, Georgia, serif">
+  <defs>
+    <marker id="arr_w" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#27AE60"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="700" height="450" fill="#FDFEFE"/>
+
+  <!-- Plane P (the hyperplane) -->
+  <line x1="100" y1="350" x2="600" y2="120" stroke="#2C3E50" stroke-width="3"/>
+  <text x="615" y="118" font-size="24" font-style="italic" fill="#2C3E50">P</text>
+  <text x="390" y="385" font-size="15" fill="#7F8C8D" font-style="italic">wᵀx − b = 0</text>
+
+  <!-- Normal vector w placed on the plane away from the projection, for visual clarity -->
+  <line x1="210" y1="299" x2="177" y2="226" stroke="#27AE60" stroke-width="3.5" marker-end="url(#arr_w)"/>
+  <text x="150" y="220" font-size="24" font-weight="bold" fill="#27AE60" font-style="italic">w</text>
+  <text x="218" y="310" font-size="12" fill="#27AE60">(normal to P)</text>
+
+  <!-- Dashed perpendicular from x to its projection = distance d(x) -->
+  <line x1="350" y1="100" x2="401" y2="211" stroke="#8E44AD" stroke-width="2.5" stroke-dasharray="7,5"/>
+  <text x="278" y="162" font-size="22" font-weight="bold" fill="#8E44AD" font-style="italic">d(x)</text>
+
+  <!-- Point x -->
+  <circle cx="350" cy="100" r="6" fill="#E74C3C" stroke="#922B21" stroke-width="1"/>
+  <text x="332" y="90" font-size="24" font-weight="bold" fill="#E74C3C" font-style="italic">x</text>
+
+  <!-- Projection of x onto P -->
+  <circle cx="401" cy="211" r="6" fill="#2980B9" stroke="#1B4F72" stroke-width="1"/>
+  <text x="412" y="234" font-size="15" fill="#2980B9" font-style="italic">proj</text>
+  <text x="447" y="238" font-size="12" fill="#2980B9" font-style="italic">P</text>
+  <text x="456" y="234" font-size="15" fill="#2980B9" font-style="italic">(x)</text>
+
+  <!-- Small right-angle marker at the foot of the perpendicular -->
+  <path d="M 395.0 206.0 L 401.5 197.7 L 409.8 204.0" fill="none" stroke="#8E44AD" stroke-width="1.5"/>
+
+  <!-- Displacement annotation x - proj(x) = a·w (along the dashed segment, rotated) -->
+  <text x="374" y="128" font-size="13" fill="#7F8C8D" font-style="italic" transform="rotate(-65 374 128)">x − proj(x) = a · w</text>
+</svg>

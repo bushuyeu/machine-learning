@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 230" font-family="ui-serif, Georgia, serif">
+  <rect width="700" height="230" fill="#FDFEFE"/>
+
+  <!-- Title -->
+  <text x="350" y="30" font-size="16" font-weight="bold" fill="#2C3E50" text-anchor="middle">Worst-case LOOCV error budget</text>
+  <text x="350" y="50" font-size="12" fill="#7F8C8D" text-anchor="middle">At most k out of n leave-one-out runs can fail  →  error ≤ k/n</text>
+
+  <!-- Row of n cells — 20 cells, k=6 red, n-k=14 green -->
+  <g transform="translate(50 80)">
+    <!-- Safe (non-SV) cells: green -->
+    <rect x="0"   y="0" width="28" height="50" fill="#D5F5E3" stroke="#27AE60" stroke-width="2"/>
+    <rect x="30"  y="0" width="28" height="50" fill="#D5F5E3" stroke="#27AE60" stroke-width="2"/>
+    <rect x="60"  y="0" width="28" height="50" fill="#D5F5E3" stroke="#27AE60" stroke-width="2"/>
+    <rect x="90"  y="0" width="28" height="50" fill="#D5F5E3" stroke="#27AE60" stroke-width="2"/>
+    <rect x="120" y="0" width="28" height="50" fill="#D5F5E3" stroke="#27AE60" stroke-width="2"/>
+    <rect x="150" y="0" width="28" height="50" fill="#D5F5E3" stroke="#27AE60" stroke-width="2"/>
+    <rect x="180" y="0" width="28" height="50" fill="#D5F5E3" stroke="#27AE60" stroke-width="2"/>
+    <!-- Dangerous (SV) cells: red -->
+    <rect x="210" y="0" width="28" height="50" fill="#FADBD8" stroke="#C0392B" stroke-width="2"/>
+    <rect x="240" y="0" width="28" height="50" fill="#FADBD8" stroke="#C0392B" stroke-width="2"/>
+    <rect x="270" y="0" width="28" height="50" fill="#FADBD8" stroke="#C0392B" stroke-width="2"/>
+    <rect x="300" y="0" width="28" height="50" fill="#FADBD8" stroke="#C0392B" stroke-width="2"/>
+    <rect x="330" y="0" width="28" height="50" fill="#FADBD8" stroke="#C0392B" stroke-width="2"/>
+    <rect x="360" y="0" width="28" height="50" fill="#FADBD8" stroke="#C0392B" stroke-width="2"/>
+    <!-- More safe cells -->
+    <rect x="390" y="0" width="28" height="50" fill="#D5F5E3" stroke="#27AE60" stroke-width="2"/>
+    <rect x="420" y="0" width="28" height="50" fill="#D5F5E3" stroke="#27AE60" stroke-width="2"/>
+    <rect x="450" y="0" width="28" height="50" fill="#D5F5E3" stroke="#27AE60" stroke-width="2"/>
+    <rect x="480" y="0" width="28" height="50" fill="#D5F5E3" stroke="#27AE60" stroke-width="2"/>
+    <rect x="510" y="0" width="28" height="50" fill="#D5F5E3" stroke="#27AE60" stroke-width="2"/>
+    <rect x="540" y="0" width="28" height="50" fill="#D5F5E3" stroke="#27AE60" stroke-width="2"/>
+    <rect x="570" y="0" width="28" height="50" fill="#D5F5E3" stroke="#27AE60" stroke-width="2"/>
+  </g>
+
+  <!-- Brackets indicating counts -->
+  <path d="M 50 140 L 50 150 L 338 150 L 338 140" fill="none" stroke="#27AE60" stroke-width="1.8"/>
+  <text x="194" y="170" font-size="13" fill="#27AE60" text-anchor="middle" font-weight="bold">n − k non-SVs  (always correct)</text>
+
+  <path d="M 260 140 L 260 150 L 598 150 L 598 140" fill="none" stroke="#C0392B" stroke-width="1.8"/>
+  <text x="429" y="190" font-size="13" fill="#C0392B" text-anchor="middle" font-weight="bold">k support vectors  (may be wrong)</text>
+
+  <!-- Note -->
+  <text x="350" y="220" font-size="11" fill="#7F8C8D" text-anchor="middle" font-style="italic">Each cell = one leave-one-out run. Only the red cells can contribute to the error count.</text>
+</svg>

@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 340" font-family="ui-serif, Georgia, serif">
+  <rect width="900" height="340" fill="#FDFEFE"/>
+
+  <!-- Title -->
+  <text x="450" y="28" font-size="17" font-weight="bold" fill="#2C3E50" text-anchor="middle">How the three kernels reach around a reference point</text>
+  <text x="450" y="48" font-size="12" fill="#7F8C8D" text-anchor="middle">k(x₀, x) as a function of x, with x₀ fixed at the center</text>
+
+  <!-- ===================================================================== -->
+  <!-- LEFT: Linear kernel                                                    -->
+  <!-- ===================================================================== -->
+  <g transform="translate(20 70)">
+    <!-- Axes -->
+    <line x1="40" y1="230" x2="260" y2="230" stroke="#2C3E50" stroke-width="1.5"/>
+    <line x1="40" y1="20"  x2="40"  y2="230" stroke="#2C3E50" stroke-width="1.5"/>
+    <text x="150" y="252" font-size="11" fill="#2C3E50" text-anchor="middle">x</text>
+    <text x="22"  y="125" font-size="11" fill="#2C3E50" text-anchor="middle" transform="rotate(-90 22 125)">k(x₀, x)</text>
+
+    <!-- Reference point x0 at the center -->
+    <circle cx="150" cy="230" r="4" fill="#E74C3C"/>
+    <text x="150" y="272" font-size="11" fill="#E74C3C" text-anchor="middle">x₀</text>
+
+    <!-- Linear kernel: straight line passing through origin, slope = x0 -->
+    <!-- k(x0, x) = x0 · x -->
+    <line x1="40" y1="200" x2="260" y2="50" stroke="#3498DB" stroke-width="3"/>
+
+    <!-- Title -->
+    <text x="150" y="16" font-size="14" font-weight="bold" fill="#3498DB" text-anchor="middle">Linear</text>
+    <text x="150" y="300" font-size="12" fill="#3498DB" text-anchor="middle" font-style="italic">k(x, x′) = xᵀx′</text>
+    <text x="150" y="318" font-size="10" fill="#7F8C8D" text-anchor="middle">unbounded,  no locality</text>
+  </g>
+
+  <!-- ===================================================================== -->
+  <!-- MIDDLE: RBF kernel                                                     -->
+  <!-- ===================================================================== -->
+  <g transform="translate(320 70)">
+    <line x1="40" y1="230" x2="260" y2="230" stroke="#2C3E50" stroke-width="1.5"/>
+    <line x1="40" y1="20"  x2="40"  y2="230" stroke="#2C3E50" stroke-width="1.5"/>
+    <text x="150" y="252" font-size="11" fill="#2C3E50" text-anchor="middle">x</text>
+    <text x="22"  y="125" font-size="11" fill="#2C3E50" text-anchor="middle" transform="rotate(-90 22 125)">k(x₀, x)</text>
+
+    <circle cx="150" cy="230" r="4" fill="#E74C3C"/>
+    <text x="150" y="272" font-size="11" fill="#E74C3C" text-anchor="middle">x₀</text>
+
+    <!-- RBF kernel: Gaussian bump centered at x0. Approximate with cubic Bezier curve. -->
+    <!-- Peak at x0 = 150, height = 30 (y=30) which means 230-200=200 height above axis -->
+    <!-- Falls off quickly to 0 (y=230) -->
+    <path d="M 40 230
+             Q 100 230, 120 210
+             Q 140 30, 150 30
+             Q 160 30, 180 210
+             Q 200 230, 260 230"
+          fill="none" stroke="#27AE60" stroke-width="3"/>
+
+    <text x="150" y="16" font-size="14" font-weight="bold" fill="#27AE60" text-anchor="middle">RBF (Gaussian)</text>
+    <text x="150" y="300" font-size="12" fill="#27AE60" text-anchor="middle" font-style="italic">k(x, x′) = exp(−γ‖x−x′‖²)</text>
+    <text x="150" y="318" font-size="10" fill="#7F8C8D" text-anchor="middle">bump,  infinitely smooth</text>
+  </g>
+
+  <!-- ===================================================================== -->
+  <!-- RIGHT: Matérn kernel                                                   -->
+  <!-- ===================================================================== -->
+  <g transform="translate(620 70)">
+    <line x1="40" y1="230" x2="260" y2="230" stroke="#2C3E50" stroke-width="1.5"/>
+    <line x1="40" y1="20"  x2="40"  y2="230" stroke="#2C3E50" stroke-width="1.5"/>
+    <text x="150" y="252" font-size="11" fill="#2C3E50" text-anchor="middle">x</text>
+    <text x="22"  y="125" font-size="11" fill="#2C3E50" text-anchor="middle" transform="rotate(-90 22 125)">k(x₀, x)</text>
+
+    <circle cx="150" cy="230" r="4" fill="#E74C3C"/>
+    <text x="150" y="272" font-size="11" fill="#E74C3C" text-anchor="middle">x₀</text>
+
+    <!-- Matérn kernel: bump, but fatter tails than RBF. Slightly pointier at peak. -->
+    <path d="M 40 230
+             Q 90 230, 110 220
+             Q 130 190, 145 50
+             L 150 40
+             L 155 50
+             Q 170 190, 190 220
+             Q 210 230, 260 230"
+          fill="none" stroke="#8E44AD" stroke-width="3"/>
+
+    <text x="150" y="16" font-size="14" font-weight="bold" fill="#8E44AD" text-anchor="middle">Matérn</text>
+    <text x="150" y="296" font-size="11" fill="#8E44AD" text-anchor="middle" font-style="italic">depends on ν, ℓ — see below</text>
+    <text x="150" y="314" font-size="10" fill="#7F8C8D" text-anchor="middle">bump with controllable smoothness (ν)</text>
+  </g>
+</svg>

@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 450" font-family="ui-serif, Georgia, serif">
+  <defs>
+    <marker id="p2arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#2C3E50"/>
+    </marker>
+  </defs>
+
+  <rect width="700" height="450" fill="#FDFEFE"/>
+
+  <!-- Shaded margin strip -->
+  <polygon points="112.6,289.1 512.6,89.1 543.4,196.9 143.4,396.9" fill="#ECF0F1" opacity="0.8"/>
+
+  <!-- Upper margin (dashed) -->
+  <line x1="112.6" y1="289.1" x2="512.6" y2="89.1" stroke="#27AE60" stroke-width="2" stroke-dasharray="6,4"/>
+
+  <!-- Decision boundary (solid) -->
+  <line x1="128" y1="343" x2="528" y2="143" stroke="#2C3E50" stroke-width="3"/>
+  <text x="540" y="143" font-size="14" fill="#2C3E50" font-style="italic">decision boundary</text>
+
+  <!-- Lower margin (dashed) -->
+  <line x1="143.4" y1="396.9" x2="543.4" y2="196.9" stroke="#C0392B" stroke-width="2" stroke-dasharray="6,4"/>
+
+  <!-- Positive class points -->
+  <!-- Three support vectors on or near the positive margin -->
+  <circle cx="220" cy="235" r="9" fill="#D5F5E3" stroke="#27AE60" stroke-width="3.5"/>
+  <text x="218" y="220" font-size="11" fill="#27AE60" font-weight="bold">SV</text>
+
+  <circle cx="340" cy="175" r="9" fill="#D5F5E3" stroke="#27AE60" stroke-width="3.5"/>
+  <text x="338" y="160" font-size="11" fill="#27AE60" font-weight="bold">SV</text>
+
+  <!-- Non-support positive points further from boundary -->
+  <circle cx="180" cy="130" r="6" fill="#27AE60" opacity="0.5"/>
+  <circle cx="270" cy="100" r="6" fill="#27AE60" opacity="0.5"/>
+  <circle cx="400" cy="85" r="6" fill="#27AE60" opacity="0.5"/>
+  <circle cx="475" cy="55" r="6" fill="#27AE60" opacity="0.5"/>
+
+  <!-- Negative class points -->
+  <!-- Two support vectors on the negative margin -->
+  <circle cx="280" cy="327" r="9" fill="#FADBD8" stroke="#C0392B" stroke-width="3.5"/>
+  <text x="278" y="352" font-size="11" fill="#C0392B" font-weight="bold">SV</text>
+
+  <circle cx="430" cy="260" r="9" fill="#FADBD8" stroke="#C0392B" stroke-width="3.5"/>
+  <text x="428" y="284" font-size="11" fill="#C0392B" font-weight="bold">SV</text>
+
+  <!-- Non-support negative points further from boundary -->
+  <circle cx="200" cy="400" r="6" fill="#C0392B" opacity="0.5"/>
+  <circle cx="330" cy="415" r="6" fill="#C0392B" opacity="0.5"/>
+  <circle cx="490" cy="335" r="6" fill="#C0392B" opacity="0.5"/>
+  <circle cx="560" cy="310" r="6" fill="#C0392B" opacity="0.5"/>
+
+  <!-- Annotation: "only these points determine the boundary" -->
+  <text x="40" y="30" font-size="15" font-weight="bold" fill="#2C3E50">Representer theorem intuition</text>
+  <text x="40" y="50" font-size="12" fill="#7F8C8D">Only the <tspan font-weight="bold" fill="#2C3E50">support vectors</tspan> (heavy outlines) affect the decision boundary.</text>
+  <text x="40" y="66" font-size="12" fill="#7F8C8D">Every faded dot can be removed without changing anything.</text>
+
+  <!-- Legend -->
+  <g font-size="12">
+    <circle cx="54" cy="410" r="9" fill="#D5F5E3" stroke="#27AE60" stroke-width="3"/>
+    <text x="70" y="414" fill="#27AE60">support vector  (α &gt; 0)</text>
+    <circle cx="54" cy="432" r="6" fill="#27AE60" opacity="0.5"/>
+    <text x="70" y="436" fill="#7F8C8D">non-support vector  (α = 0)</text>
+  </g>
+</svg>

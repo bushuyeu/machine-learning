@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 450" font-family="ui-serif, Georgia, serif">
+  <defs>
+    <marker id="arr_w2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#2C3E50"/>
+    </marker>
+    <linearGradient id="posSide" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#D5F5E3" stop-opacity="0.6"/>
+      <stop offset="1" stop-color="#D5F5E3" stop-opacity="0.1"/>
+    </linearGradient>
+    <linearGradient id="negSide" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0" stop-color="#FADBD8" stop-opacity="0.6"/>
+      <stop offset="1" stop-color="#FADBD8" stop-opacity="0.1"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="700" height="450" fill="#FDFEFE"/>
+
+  <!-- Shaded positive half-space (above the plane, on the side w points to) -->
+  <polygon points="0,0 700,0 600,120 100,350 0,450" fill="url(#posSide)"/>
+
+  <!-- Shaded negative half-space (below the plane) -->
+  <polygon points="100,350 600,120 700,120 700,450 0,450" fill="url(#negSide)"/>
+
+  <!-- Plane P -->
+  <line x1="100" y1="350" x2="600" y2="120" stroke="#2C3E50" stroke-width="3"/>
+  <text x="615" y="118" font-size="24" font-style="italic" fill="#2C3E50">P</text>
+
+  <!-- Normal vector w -->
+  <line x1="160" y1="322" x2="127" y2="249" stroke="#2C3E50" stroke-width="3.5" marker-end="url(#arr_w2)"/>
+  <text x="100" y="243" font-size="24" font-weight="bold" fill="#2C3E50" font-style="italic">w</text>
+
+  <!-- Side labels -->
+  <text x="350" y="60" font-size="16" fill="#27AE60" font-style="italic" font-weight="bold">positive half-space  (w points this way)</text>
+  <text x="350" y="430" font-size="16" fill="#C0392B" font-style="italic" font-weight="bold">negative half-space</text>
+
+  <!-- Point x+ above the plane -->
+  <line x1="300" y1="150" x2="341" y2="239" stroke="#27AE60" stroke-width="2" stroke-dasharray="6,4"/>
+  <circle cx="300" cy="150" r="7" fill="#27AE60" stroke="#1E8449" stroke-width="1.5"/>
+  <text x="275" y="140" font-size="22" font-weight="bold" fill="#27AE60" font-style="italic">x₊</text>
+  <text x="242" y="205" font-size="16" fill="#27AE60" font-weight="bold">d(x₊) &gt; 0</text>
+
+  <!-- Point x- below the plane -->
+  <line x1="450" y1="340" x2="392" y2="215" stroke="#C0392B" stroke-width="2" stroke-dasharray="6,4"/>
+  <circle cx="450" cy="340" r="7" fill="#C0392B" stroke="#922B21" stroke-width="1.5"/>
+  <text x="460" y="350" font-size="22" font-weight="bold" fill="#C0392B" font-style="italic">x₋</text>
+  <text x="460" y="380" font-size="16" fill="#C0392B" font-weight="bold">d(x₋) &lt; 0</text>
+</svg>
